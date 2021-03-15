@@ -21,12 +21,30 @@ class ViewController: UIViewController {
             //tag - 100是第几个标题菜单，row是菜单第几行
               print(tag-100,row)
         })
-       
         return drop
     }()
+    
+    
+    lazy var dropView:LYDropView = {
+        //传入一个二维数组即可
+        let drop = LYDropView.init(frame: CGRect.init(x: 0, y: kNaviHeight * 2 + 30, width: screenWidth, height: 40), selectClosure: { (tag, row) in
+            //tag - 100是第几个标题菜单，row是菜单第几行
+              print(tag-100,row)
+        })
+        drop.backgroundColor = UIColor.orange
+        return drop
+    }()
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       view.addSubview(dropList)
+        
+        view.addSubview(dropList)
+        
+        view.addSubview(dropView)
     }
 
     override func didReceiveMemoryWarning() {

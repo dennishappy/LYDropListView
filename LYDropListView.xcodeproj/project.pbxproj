@@ -17,6 +17,9 @@
 		088ECDFF1F7C9973008F9517 /* LYCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088ECDFE1F7C9973008F9517 /* LYCommon.swift */; };
 		088ECE011F7C9E05008F9517 /* LYDropListTItleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088ECE001F7C9E05008F9517 /* LYDropListTItleView.swift */; };
 		088ECE031F7C9E1A008F9517 /* LYDropListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088ECE021F7C9E1A008F9517 /* LYDropListView.swift */; };
+		9553DAB925FF3208008C02D9 /* LYFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553DAB625FF3207008C02D9 /* LYFilterView.swift */; };
+		9553DABA25FF3208008C02D9 /* LYFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9553DAB725FF3207008C02D9 /* LYFilterView.xib */; };
+		9553DABB25FF3208008C02D9 /* LYDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553DAB825FF3207008C02D9 /* LYDropView.swift */; };
 		A85BFC481D07E43CE2F7D16E /* Pods_LYDropListView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D655FA43D359EA3647AB03 /* Pods_LYDropListView.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 		26D655FA43D359EA3647AB03 /* Pods_LYDropListView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYDropListView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49028B9958E136C404319F95 /* Pods-LYDropListView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDropListView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYDropListView/Pods-LYDropListView.debug.xcconfig"; sourceTree = "<group>"; };
 		672924708B33FE8EDD060024 /* Pods-LYDropListView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDropListView.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYDropListView/Pods-LYDropListView.release.xcconfig"; sourceTree = "<group>"; };
+		9553DAB625FF3207008C02D9 /* LYFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYFilterView.swift; sourceTree = "<group>"; };
+		9553DAB725FF3207008C02D9 /* LYFilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYFilterView.xib; sourceTree = "<group>"; };
+		9553DAB825FF3207008C02D9 /* LYDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYDropView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,9 @@
 				088ECDFE1F7C9973008F9517 /* LYCommon.swift */,
 				088ECE001F7C9E05008F9517 /* LYDropListTItleView.swift */,
 				088ECE021F7C9E1A008F9517 /* LYDropListView.swift */,
+				9553DAB825FF3207008C02D9 /* LYDropView.swift */,
+				9553DAB625FF3207008C02D9 /* LYFilterView.swift */,
+				9553DAB725FF3207008C02D9 /* LYFilterView.xib */,
 			);
 			path = LYDropList;
 			sourceTree = "<group>";
@@ -177,8 +186,7 @@
 				088ECDC61F7C8C5B008F9517 /* Sources */,
 				088ECDC71F7C8C5B008F9517 /* Frameworks */,
 				088ECDC81F7C8C5B008F9517 /* Resources */,
-				2F3F56EECC7573A83A34F312 /* [CP] Embed Pods Frameworks */,
-				D52D62AD66DD0B85775B41AC /* [CP] Copy Pods Resources */,
+				A344503EBF4D01DED2FA2B8F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +287,7 @@
 				088ECDD81F7C8C5B008F9517 /* LaunchScreen.storyboard in Resources */,
 				088ECDD51F7C8C5B008F9517 /* Assets.xcassets in Resources */,
 				088ECDD31F7C8C5B008F9517 /* Main.storyboard in Resources */,
+				9553DABA25FF3208008C02D9 /* LYFilterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,24 +308,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2F3F56EECC7573A83A34F312 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LYDropListView/Pods-LYDropListView-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYDropListView/Pods-LYDropListView-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9E3D7F2E258F75B9D34BCA0A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,19 +326,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D52D62AD66DD0B85775B41AC /* [CP] Copy Pods Resources */ = {
+		A344503EBF4D01DED2FA2B8F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LYDropListView/Pods-LYDropListView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYDropListView/Pods-LYDropListView-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LYDropListView/Pods-LYDropListView-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -361,7 +355,9 @@
 				088ECE031F7C9E1A008F9517 /* LYDropListView.swift in Sources */,
 				088ECDFF1F7C9973008F9517 /* LYCommon.swift in Sources */,
 				088ECDCE1F7C8C5B008F9517 /* AppDelegate.swift in Sources */,
+				9553DABB25FF3208008C02D9 /* LYDropView.swift in Sources */,
 				088ECE011F7C9E05008F9517 /* LYDropListTItleView.swift in Sources */,
+				9553DAB925FF3208008C02D9 /* LYFilterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +531,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LY.LYDropListView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -552,7 +548,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LY.LYDropListView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

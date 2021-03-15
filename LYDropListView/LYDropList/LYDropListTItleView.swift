@@ -35,10 +35,7 @@ class LYDropListTItleView: UIView {
                     self.icon.transform = CGAffineTransform.identity
                     
                 })
-                
             }
-            
-            
         }
         
     }
@@ -60,7 +57,7 @@ class LYDropListTItleView: UIView {
         self.addGestureRecognizer(ges)
     }
     
-    func tapAction(){
+    @objc func tapAction(){
         self._isSelect = !self._isSelect
         self.isSelected = self._isSelect
         if (self.gesClosure != nil){
@@ -79,10 +76,8 @@ class LYDropListTItleView: UIView {
         icon = UIImageView.init()
         icon.image = UIImage.init(named:"下箭头灰")
         addSubview(icon)
-        
-        
-        
     }
+    
     func layout(){
         label.snp.removeConstraints()
         icon.snp.removeConstraints()
@@ -99,8 +94,6 @@ class LYDropListTItleView: UIView {
             make.height.equalTo(12)
             
         }
-        
-        
     }
     func getLabWidth(labelStr:String,font:UIFont,height:CGFloat) -> CGFloat {
         
@@ -108,9 +101,9 @@ class LYDropListTItleView: UIView {
         
         let size = CGSize(width:900, height:height)
         
-        let dic = NSDictionary(object: font, forKey: NSFontAttributeName as NSCopying)
+        let dic = NSDictionary(object: font, forKey: NSAttributedString.Key.font as NSCopying)
         
-        let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [String : AnyObject], context: nil).size
+        let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedString.Key : Any], context: nil).size
         
         return strSize.width
         

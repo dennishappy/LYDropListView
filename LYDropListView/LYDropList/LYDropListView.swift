@@ -10,9 +10,9 @@ import UIKit
 
 class LYDropListView: UIView,UITableViewDelegate,UITableViewDataSource{
     fileprivate var cellid = "cellid"
-   lazy  var titleArray = [String]()
-   lazy  var tableArray = [[String]]()
 
+    lazy  var titleArray = [String]()
+    lazy  var tableArray = [[String]]()
     var maskViewSS:UIView?
     var selectClosure:((_ tag:Int,_ row:Int)->Void)?
     init(frame: CGRect,tableArr:[[String]],selectClosure : @escaping (_ tag:Int,_ row:Int)->Void) {
@@ -42,7 +42,7 @@ class LYDropListView: UIView,UITableViewDelegate,UITableViewDataSource{
         maskViewSS?.addGestureRecognizer(tap)
         
     }
-    func tapAction(){
+    @objc func tapAction(){
 //        self.maskViewSS?.removeFromSuperview()
         for i in 0..<self.tableArray.count{
             let tableView = self.viewWithTag(100+i) as! UITableView
@@ -92,9 +92,16 @@ class LYDropListView: UIView,UITableViewDelegate,UITableViewDataSource{
                         tableView.reloadData()
                       
                         if i == n {
-                            UIView.animate(withDuration: 0.2, animations: {
-                                tableView.frame = CGRect.init(x: 0, y: 40, width: screenWidth, height: (CGFloat(arr.count)*40.0 + 20.0) > screenHeight - kNaviHeight - 40 ?screenHeight - kNaviHeight - 40:(CGFloat(arr.count)*40.0) )
-                            })
+                            
+                            let height = (CGFloat(arr.count)*40.0 + 20.0) > screenHeight - kNaviHeight - 40 ?screenHeight - kNaviHeight - 40:(CGFloat(arr.count)*40.0)
+                            
+                            UIView.animate(withDuration: 0.2) {
+                                tableView.frame = CGRect(x: 0, y: 40, width: screenWidth, height: height)
+                            }
+
+//                            UIView.animate(withDuration: 0.2, animations: {
+//                                tableView.frame = CGRect.init(x: 0, y: 40, width: screenWidth, height: (CGFloat(arr.count)*40.0 + 20.0) > screenHeight - kNaviHeight - 40 ?screenHeight - kNaviHeight - 40:(CGFloat(arr.count)*40.0) )
+//                            })
                             
                         }else{
                             UIView.animate(withDuration: 0.2, animations: {
@@ -102,8 +109,6 @@ class LYDropListView: UIView,UITableViewDelegate,UITableViewDataSource{
                             })
                             
                         }
-                        
-                        
                         
                     }
                     
@@ -129,12 +134,9 @@ class LYDropListView: UIView,UITableViewDelegate,UITableViewDataSource{
     func setTableView(){
         let totalArry:Array<Array<String>>  = self.tableArray
         
-        
-        
         for i in 0..<totalArry.count{
         
             let tableView = UITableView.init(frame: CGRect.init(x: 0, y: 40, width: screenWidth, height: 1), style: .plain)
-            
             
             tableView.delegate = self
             tableView.dataSource = self
@@ -145,8 +147,6 @@ class LYDropListView: UIView,UITableViewDelegate,UITableViewDataSource{
             tableView.isScrollEnabled = false
             //            tableView.separatorStyle = .none
             self.addSubview(tableView)
-            
-            
         }
     }
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
